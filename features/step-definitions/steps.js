@@ -13,6 +13,5 @@ When('User clicks the "Login" button', async () => {
 Then('User should see "Epic sadface: Username is required" error message', async () => {
     const expectedMessage = "Epic sadface: Username is required";
     const actualText = await loginPage.getErrorMessage();
-    console.log("Actual error message:", actualText);
     expect(actualText).to.equal(expectedMessage);
 });
