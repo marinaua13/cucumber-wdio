@@ -7,11 +7,11 @@ Given('User is located on the main page of saucedemo website', async () => {
 });
 
 When('User clicks the "Login" button', async () => {
-    await loginPage.clickLogin();
+    await loginPage.login();
 });
 
 Then('User should see "Epic sadface: Username is required" error message', async () => {
     const expectedMessage = "Epic sadface: Username is required";
-    const actualText = await loginPage.getErrorMessage();
-    expect(actualText).to.equal(expectedMessage);
+    const actualMessage = await loginPage.getErrorMessageText();
+    expect(actualMessage).to.equal(expectedMessage);
 });
