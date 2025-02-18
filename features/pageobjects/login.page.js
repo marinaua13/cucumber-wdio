@@ -10,11 +10,13 @@ class LoginPage {
         await browser.url('https://www.saucedemo.com/');
     }
 
-    async clickLogin() {
+    async login(username = "", password = "") {
+        await this.usernameInput.setValue(username);
+        await this.passwordInput.setValue(password);
         await this.loginButton.click();
     }
 
-    async getErrorMessage() {
+    async getErrorMessageText() {
         return await this.errorMessage.getText();
     }
 }
